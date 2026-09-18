@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en" class="light" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.className = "light";</script>
+
+  <title>Crafts — Dev Chauhan</title>
+  <meta name="title" content="Crafts — Dev Chauhan" />
+  <meta name="description"
+    content="A library of interactive UI blocks you can explore, tweak, and take straight into your projects by Dev Chauhan." />
+  <meta name="keywords"
+    content="Crafts, Dev Chauhan, UI components, interactive UI, micro-interactions, web design, frontend components, CSS animations, gooey UI" />
+  <meta name="author" content="Dev Chauhan" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://craft.devchauhan.in/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon/favicon-48x48.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+  <!-- Theme Meta -->
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://craft.devchauhan.in/" />
+  <meta property="og:title" content="Crafts — Dev Chauhan" />
+  <meta property="og:description"
+    content="A library of interactive UI blocks you can explore, tweak, and take straight into your projects." />
+  <meta property="og:image" content="https://craft.devchauhan.in/assets/og/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Dev Chauhan — Crafts" />
+  <meta property="og:site_name" content="Crafts — Dev Chauhan" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://craft.devchauhan.in/" />
+  <meta name="twitter:title" content="Crafts — Dev Chauhan" />
+  <meta name="twitter:description"
+    content="A library of interactive UI blocks you can explore, tweak, and take straight into your projects." />
+  <meta name="twitter:image" content="https://craft.devchauhan.in/assets/og/og.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Crafts — Dev Chauhan",
+      "url": "https://craft.devchauhan.in/",
+      "description": "A library of interactive UI blocks you can explore, tweak, and take straight into your projects by Dev Chauhan.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://devchauhan.in/#person",
+        "name": "Dev Chauhan",
+        "url": "https://devchauhan.in"
+      }
+    }
+  </script>
+
+  <!-- Craft component styles -->
+  <link rel="stylesheet" href="css/craft.css" />
+
+  <!-- Animated Signature dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js"></script>
+  <script src="js/signature.js"></script>
+
+  <style>
+    :root {
+      --heading: #111111;
+      --body: #262626;
+      --body-muted: #737373;
+      --body-faint: #a1a1aa;
+      --background: #ffffff;
+      --card-bg: #f4f4f5;
+      --card-hover-bg: #e8e8eb;
+      --border: rgba(0, 0, 0, 0.06);
+      --gooey-surface: #e6e6e7;
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
+      --duration-smooth: .15s;
+      --ease-smooth: cubic-bezier(.19, 1, .22, 1);
+      --selection-color: #111111;
+      --selection-bg: #efefef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+    }
+
+    ::selection {
+      color: var(--selection-color);
+      background: var(--selection-bg);
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      color: var(--body);
+      background-color: var(--background);
+    }
+
+    body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
+      font-family: var(--font-primary);
+      font-size: .875rem;
+      font-weight: 400;
+      line-height: 1.25rem;
+      letter-spacing: -.00563rem;
+    }
+
+    a {
+      cursor: pointer;
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--duration-smooth) var(--ease-smooth);
+    }
+
+    /* Page Container — 100% full viewport width with corner gutters */
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 7rem 2rem 4rem;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 640px) {
+      .page-container {
+        padding: 1.75rem 1.25rem 2.5rem;
+      }
+    }
+
+    /* Header Section — kept at standard hero max-width */
+    .header-hero {
+      width: 100%;
+      max-width: 36.375rem;
+      margin: 0 auto 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--body-muted);
+      margin-bottom: 4px;
+      transition: color var(--duration-smooth) var(--ease-smooth);
+    }
+
+    .back-link:hover {
+      color: var(--heading);
+    }
+
+    .profile-name {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--heading);
+      letter-spacing: -.015em;
+    }
+
+    .hero-subtitle {
+      font-size: .925rem;
+      color: var(--body-muted);
+      font-weight: 400;
+      line-height: 1.45;
+      letter-spacing: -.00563rem;
+      max-width: 440px;
+    }
+
+    /* Craft Cards Grid — 3 Columns desktop, 2 tablet, 1 mobile */
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+      transition: grid-template-columns var(--duration-smooth) var(--ease-smooth);
+    }
+
+    .craft-grid.list-view {
+      grid-template-columns: 1fr !important;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 1024px) {
+      .craft-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .craft-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    .project-card.craft-card {
+      position: relative;
+      background-color: var(--card-bg);
+      border: none !important;
+      box-shadow: none !important;
+      padding: 48px 24px 32px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 12px;
+      overflow: visible !important;
+      transition: background-color var(--duration-smooth) var(--ease-smooth);
+    }
+
+    .project-card.craft-card:hover {
+      background-color: var(--card-bg);
+    }
+
+    .craft-card-label {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--body-faint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page-container">
+
+    <!-- Top Header Bar (Signature Left, Layout Switcher Right) -->
+    <header class="craft-page-header">
+      <a href="https://devchauhan.in" aria-label="Dev Chauhan Homepage" class="craft-header-brand">
+        <animated-signature text="dEv" font-size="9" stroke-width="0.5" color="#111111" duration="1.5" in-view></animated-signature>
+      </a>
+
+      <div class="layout-toggle-pill" role="tablist" id="layoutNav" aria-label="Card list layout view switcher">
+        <div class="layout-slider" id="layoutSlider" aria-hidden="true"></div>
+        <button type="button" class="layout-btn" id="btnListView" role="tab" aria-selected="false" aria-label="Row list view" title="Row list view">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <circle cx="5" cy="7" r="2.6667" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></circle>
+            <circle cx="5" cy="17" r="2.6667" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></circle>
+            <line x1="11.6666" y1="7" x2="21.6666" y2="7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></line>
+            <line x1="11.6666" y1="17" x2="21.6666" y2="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></line>
+          </svg>
+        </button>
+        <button type="button" class="layout-btn active" id="btnGridView" role="tab" aria-selected="true" aria-label="Columns grid view" title="Columns grid view">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.448 1.75C16.5495 1.74997 15.8003 1.74995 15.2055 1.82991C14.5777 1.91432 14.0109 2.09999 13.5555 2.55546C13.1 3.01093 12.9143 3.57773 12.8299 4.20552C12.7499 4.8003 12.75 5.54951 12.75 6.44798V6.552C12.75 7.45047 12.7499 8.19971 12.8299 8.79448C12.9143 9.42228 13.1 9.98908 13.5555 10.4445C14.0109 10.9 14.5777 11.0857 15.2055 11.1701C15.8003 11.2501 16.5495 11.25 17.448 11.25H17.552C18.4505 11.25 19.1997 11.2501 19.7945 11.1701C20.4223 11.0857 20.9891 10.9 21.4445 10.4445C21.9 9.98908 22.0857 9.42228 22.1701 8.79448C22.2501 8.1997 22.25 7.45048 22.25 6.552V6.44801C22.25 5.54953 22.2501 4.80031 22.1701 4.20552C22.0857 3.57773 21.9 3.01093 21.4445 2.55546C20.9891 2.09999 20.4223 1.91432 19.7945 1.82991C19.1997 1.74995 18.4505 1.74997 17.552 1.75H17.448ZM14.6161 3.61612C14.7464 3.4858 14.9439 3.37858 15.4054 3.31654C15.8884 3.2516 16.536 3.25 17.5 3.25C18.464 3.25 19.1116 3.2516 19.5946 3.31654C20.0561 3.37858 20.2536 3.4858 20.3839 3.61612C20.5142 3.74644 20.6214 3.94393 20.6835 4.4054C20.7484 4.88843 20.75 5.53599 20.75 6.5C20.75 7.46401 20.7484 8.11157 20.6835 8.59461C20.6214 9.05607 20.5142 9.25357 20.3839 9.38389C20.2536 9.5142 20.0561 9.62143 19.5946 9.68347C19.1116 9.74841 18.464 9.75 17.5 9.75C16.536 9.75 15.8884 9.74841 15.4054 9.68347C14.9439 9.62143 14.7464 9.5142 14.6161 9.38389C14.4858 9.25357 14.3786 9.05607 14.3165 8.59461C14.2516 8.11157 14.25 7.46401 14.25 6.5C14.25 5.53599 14.2516 4.88843 14.3165 4.4054C14.3786 3.94393 14.4858 3.74644 14.6161 3.61612Z" fill="currentColor"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.44801 12.75C5.54954 12.75 4.8003 12.7499 4.20552 12.8299C3.57773 12.9143 3.01093 13.1 2.55546 13.5555C2.09999 14.0109 1.91432 14.5777 1.82991 15.2055C1.74995 15.8003 1.74997 16.5495 1.75 17.448V17.552C1.74997 18.4505 1.74995 19.1997 1.82991 19.7945C1.91432 20.4223 2.09999 20.9891 2.55546 21.4445C3.01093 21.9 3.57773 22.0857 4.20552 22.1701C4.80031 22.2501 5.54953 22.25 6.44801 22.25H6.552C7.45048 22.25 8.1997 22.2501 8.79448 22.1701C9.42228 22.0857 9.98908 21.9 10.4445 21.4445C10.9 20.9891 11.0857 20.4223 11.1701 19.7945C11.2501 19.1997 11.25 18.4505 11.25 17.552V17.448C11.25 16.5495 11.2501 15.8003 11.1701 15.2055C11.0857 14.5777 10.9 14.0109 10.4445 13.5555C9.98908 13.1 9.42228 12.9143 8.79448 12.8299C8.19971 12.7499 7.4505 12.75 6.55203 12.75H6.44801ZM3.61612 14.6161C3.74644 14.4858 3.94393 14.3786 4.4054 14.3165C4.88843 14.2516 5.53599 14.25 6.5 14.25C7.46401 14.25 8.11157 14.2516 8.59461 14.3165C9.05607 14.3786 9.25357 14.4858 9.38389 14.6161C9.5142 14.7464 9.62143 14.9439 9.68347 15.4054C9.74841 15.8884 9.75 16.536 9.75 17.5C9.75 18.464 9.74841 19.1116 9.68347 19.5946C9.62143 20.0561 9.5142 20.2536 9.38389 20.3839C9.25357 20.5142 9.05607 20.6214 8.59461 20.6835C8.11157 20.7484 7.46401 20.75 6.5 20.75C5.53599 20.75 4.88843 20.7484 4.4054 20.6835C3.94393 20.6214 3.74644 20.5142 3.61612 20.3839C3.4858 20.2536 3.37858 20.0561 3.31654 19.5946C3.2516 19.1116 3.25 18.464 3.25 17.5C3.25 16.536 3.2516 15.8884 3.31654 15.4054C3.37858 14.9439 3.4858 14.7464 3.61612 14.6161Z" fill="currentColor"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.75 6.5C1.75 3.87665 3.87665 1.75 6.5 1.75C9.12336 1.75 11.25 3.87665 11.25 6.5C11.25 9.12336 9.12336 11.25 6.5 11.25C3.87665 11.25 1.75 9.12336 1.75 6.5ZM6.5 3.25C4.70508 3.25 3.25 4.70508 3.25 6.5C3.25 8.29493 4.70508 9.75 6.5 9.75C8.29493 9.75 9.75 8.29493 9.75 6.5C9.75 4.70508 8.29493 3.25 6.5 3.25Z" fill="currentColor"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.75 17.5C12.75 14.8767 14.8767 12.75 17.5 12.75C20.1234 12.75 22.25 14.8767 22.25 17.5C22.25 20.1234 20.1234 22.25 17.5 22.25C14.8767 22.25 12.75 20.1234 12.75 17.5ZM17.5 14.25C15.7051 14.25 14.25 15.7051 14.25 17.5C14.25 19.2949 15.7051 20.75 17.5 20.75C19.2949 20.75 20.75 19.2949 20.75 17.5C20.75 15.7051 19.2949 14.25 17.5 14.25Z" fill="currentColor"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+
+    <!-- Big Squircle Craft Cards Grid (Wider max-width, 3 columns, no border) -->
+    <div class="craft-grid">
+
+      <!-- Craft 1: Search Bar -->
+      <div class="project-card craft-card" data-squircle-radius="28" data-squircle-smoothing="60">
+        <div class="craft-preview">
+          <div class="sb-hero-control-wrapper">
+            <div class="sb-hero-control-bar">
+              <div class="sb-control-capsule sb-search-capsule">
+                <input type="text" class="sb-search-input" id="sbSearchInput" placeholder="Search craft..."
+                  autocomplete="off">
+                <button class="sb-search-clear" id="sbSearchClear" aria-label="Clear search" style="display:none;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M18.2929 19.7071C18.6834 20.0976 19.3166 20.0976 19.7071 19.7071C20.0976 19.3166 20.0976 18.6834 19.7071 18.2929L13.4142 12L19.7071 5.70711C20.0976 5.31658 20.0976 4.68342 19.7071 4.29289C19.3166 3.90237 18.6834 3.90237 18.2929 4.29289L12 10.5858L5.70711 4.29289C5.31658 3.90237 4.68342 3.90237 4.29289 4.29289C3.90237 4.68342 3.90237 5.31658 4.29289 5.70711L10.5858 12L4.29289 18.2929C3.90237 18.6834 3.90237 19.3166 4.29289 19.7071C4.68342 20.0976 5.31658 20.0976 5.70711 19.7071L12 13.4142L18.2929 19.7071Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <svg class="sb-control-bridge" width="16" height="50" viewBox="0 0 16 54" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 7.8 Q8 16 16 7.8 L16 46.2 Q8 38 0 46.2 Z" fill="var(--gooey-surface)" />
+              </svg>
+
+              <button class="sb-control-circle" id="sbSearchBtn" aria-label="Search" title="Search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M11 2.75C6.44365 2.75 2.75 6.44365 2.75 11C2.75 15.5563 6.44365 19.25 11 19.25C15.5563 19.25 19.25 15.5563 19.25 11C19.25 6.44365 15.5563 2.75 11 2.75ZM1.25 11C1.25 5.61522 5.61522 1.25 11 1.25C16.3848 1.25 20.75 5.61522 20.75 11C20.75 16.3848 16.3848 20.75 11 20.75C5.61522 20.75 1.25 16.3848 1.25 11ZM20.1579 19.7511C19.9264 19.7335 19.7335 19.9264 19.7511 20.1579C19.7514 20.1592 19.7553 20.1848 19.7746 20.2573C19.7974 20.3424 19.8312 20.4554 19.8828 20.6277C19.9301 20.7857 19.9609 20.8881 19.9862 20.9641C20.0121 21.0419 20.021 21.0568 20.0171 21.0496C20.1225 21.2465 20.3745 21.31 20.5607 21.1867C20.5538 21.1912 20.5688 21.1824 20.6284 21.1261C20.6868 21.0712 20.7624 20.9957 20.8791 20.8791C20.9957 20.7624 21.0712 20.6868 21.1261 20.6284C21.1727 20.579 21.1868 20.5602 21.1877 20.5592C21.3093 20.3736 21.2463 20.1236 21.0511 20.018C21.0499 20.0175 21.0287 20.0077 20.9641 19.9862C20.8881 19.9609 20.7857 19.9301 20.6277 19.8828C20.4554 19.8312 20.3424 19.7974 20.2573 19.7746C20.1848 19.7553 20.1591 19.7514 20.1579 19.7511ZM18.2564 20.2833C18.1612 19.1267 19.1267 18.1612 20.2833 18.2564C20.4833 18.2728 20.7251 18.3457 20.9862 18.4242C21.0101 18.4314 21.0341 18.4387 21.0583 18.4459C21.0801 18.4524 21.1018 18.4589 21.1234 18.4654C21.3632 18.5369 21.5881 18.604 21.7576 18.6948C22.7335 19.2173 23.0485 20.4659 22.4373 21.3889C22.3312 21.5492 22.165 21.715 21.9878 21.8917C21.9719 21.9076 21.9558 21.9236 21.9397 21.9397C21.9236 21.9558 21.9076 21.9719 21.8917 21.9878C21.7149 22.165 21.5492 22.3312 21.3889 22.4373C20.4659 23.0485 19.2173 22.7335 18.6948 21.7576C18.604 21.5881 18.5369 21.3632 18.4654 21.1234C18.4589 21.1018 18.4524 21.0801 18.4459 21.0583C18.4387 21.0341 18.4314 21.0101 18.4242 20.9862C18.3457 20.7252 18.2728 20.4833 18.2564 20.2833Z"
+                    fill="currentColor"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Craft 2: Gooey Dropdown -->
+      <div class="project-card craft-card craft-card-tall" data-squircle-radius="28" data-squircle-smoothing="60"
+        style="position:relative;">
+        <div class="gooey-preview">
+          <div class="lq-trigger-outer" id="ddTriggerOuter">
+            <button class="lq-trigger" id="ddTrigger" aria-haspopup="true" aria-expanded="false">
+              Menu
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="lq-content" id="ddContent" style="display:none;">
+              <div class="lq-item-list" id="ddItemList">
+                <div class="lq-menu-group">
+                  <button class="lq-menu-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>Profile</button>
+                  <button class="lq-menu-item dd-mobile-hide">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M9 21v-2a4 4 0 0 1 3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>Users</button>
+                </div>
+                <div class="lq-separator"></div>
+                <div class="lq-menu-group">
+                  <button class="lq-menu-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="3" />
+                      <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>Settings</button>
+                  <button class="lq-menu-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M4.0828 10.8943C4.52171 8.55339 4.74117 7.38295 5.57434 6.69147C6.40752 6 7.59835 6 9.98003 6H14.0209C16.4026 6 17.5934 6 18.4266 6.69147C19.2598 7.38295 19.4792 8.55339 19.9181 10.8943L20.6681 14.8943C21.2853 18.186 21.5939 19.8318 20.6942 20.9159C19.7945 22 18.12 22 14.7709 22H9.23003C5.88097 22 4.20644 22 3.30672 20.9159C2.40701 19.8318 2.7156 18.186 3.3328 14.8943L4.0828 10.8943Z" />
+                    </svg>Shop</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- side toggle -->
+        <button class="craft-side-toggle" id="ddSideToggle" aria-label="Toggle alignment">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 8l4 4-4 4M7 8l-4 4 4 4" />
+          </svg>
+          <span id="ddSideLabel">right</span>
+        </button>
+      </div>
+
+      <!-- Craft 3: Gooey Tooltip -->
+      <div class="project-card craft-card" data-squircle-radius="28" data-squircle-smoothing="60"
+        style="position:relative;">
+        <div class="gooey-preview gooey-preview-tooltip">
+          <div class="lq-trigger-outer" id="ttTriggerOuter">
+            <button class="lq-trigger" id="ttTrigger" aria-haspopup="true" aria-expanded="false">
+              Hover me
+            </button>
+            <div class="lq-tooltip-content" id="ttContent" style="display:none;">
+              <div class="lq-item-list" id="ttItemList">
+                <div class="lq-tooltip-body"><strong>Quick tip</strong><br />Hover elements to see contextual info.
+                  Click to dismiss.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- up/down toggle -->
+        <button class="craft-side-toggle" id="ttDirToggle" aria-label="Toggle tooltip direction">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 7l4-4 4 4M8 17l4 4 4-4" />
+          </svg>
+          <span id="ttDirLabel">top</span>
+        </button>
+      </div>
+
+      <!-- Craft 4: Split Action Button -->
+      <div class="project-card craft-card" data-squircle-radius="28" data-squircle-smoothing="60">
+        <div class="craft-preview craft-preview-clip">
+          <div class="sb-container" id="sbContainer"></div>
+        </div>
+      </div>
+
+      <!-- Craft 5: Pill Menubar Navigation -->
+      <div class="project-card craft-card" data-squircle-radius="28" data-squircle-smoothing="60">
+        <div class="craft-preview">
+          <nav class="pms-nav" id="pmsNav" aria-label="Craft navigation preview">
+            <div class="pms-slider" id="pmsSlider" aria-hidden="true"></div>
+            <button type="button" class="pms-item active" data-index="0">
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.75 6.019C13.336 6.019 13 5.683 13 5.269V2.75C13 2.336 13.336 2 13.75 2C14.164 2 14.5 2.336 14.5 2.75V5.269C14.5 5.683 14.164 6.019 13.75 6.019Z"
+                  fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M15.792 5.848L9.446 1.147C9.181 0.951 8.818 0.951 8.553 1.147L2.208 5.848C1.764 6.177 1.5 6.702 1.5 7.254V13.75C1.5 15.267 2.733 16.5 4.25 16.5H5.5V12.75C5.5 11.7835 6.2835 11 7.25 11C8.2165 11 9 11.7835 9 12.75V16.5H13.75C15.267 16.5 16.5 15.267 16.5 13.75V7.254C16.5 6.702 16.235 6.176 15.792 5.848ZM11.25 10.5H12.75C13.164 10.5 13.5 10.164 13.5 9.75C13.5 9.336 13.164 9 12.75 9H11.25C10.836 9 10.5 9.336 10.5 9.75C10.5 10.164 10.836 10.5 11.25 10.5Z"
+                  fill="currentColor"></path>
+              </svg>
+              <span>Home</span>
+            </button>
+            <button type="button" class="pms-item" data-index="1">
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M13 10C11.3428 10 10 11.3428 10 13C10 14.6572 11.3428 16 13 16C13.5565 16 14.0775 15.8486 14.5241 15.5847L15.7197 16.7803C16.0126 17.0732 16.4875 17.0732 16.7804 16.7803C17.0732 16.4874 17.0732 16.0126 16.7804 15.7197L15.5848 14.5241C15.8486 14.0774 16 13.5564 16 13C16 11.3428 14.6572 10 13 10ZM11.5 13C11.5 12.1712 12.1712 11.5 13 11.5C13.8288 11.5 14.5 12.1712 14.5 13C14.5 13.8288 13.8288 14.5 13 14.5C12.1712 14.5 11.5 13.8288 11.5 13Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M10.7632 16.9058C9.41078 16.1297 8.5 14.6714 8.5 13C8.5 11.3926 9.34236 9.98233 10.6098 9.18639C10.0932 9.06451 9.55423 9 8.99999 9C6.14167 9 3.69058 10.7157 2.60517 13.1674C2.05162 14.4186 2.74425 15.8317 4.01259 16.2313C5.29503 16.6354 6.99283 17 8.99999 17C9.6181 17 10.2069 16.9654 10.7632 16.9058Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M9 7.50049C10.7952 7.50049 12.25 6.04543 12.25 4.25049C12.25 2.45554 10.7952 1.00049 9 1.00049C7.20482 1.00049 5.75 2.45554 5.75 4.25049C5.75 6.04543 7.20482 7.50049 9 7.50049Z"
+                  fill="currentColor"></path>
+              </svg>
+              <span>User</span>
+            </button>
+            <button type="button" class="pms-item" data-index="2">
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.25,5.5c-.414,0-.75-.336-.75-.75v-1.75c0-.827-.673-1.5-1.5-1.5s-1.5,.673-1.5,1.5v1.75c0,.414-.336,.75-.75,.75s-.75-.336-.75-.75v-1.75c0-1.654,1.346-3,3-3s3,1.346,3,3v1.75c0,.414-.336,.75-.75,.75Z"
+                  fill="currentColor"></path>
+                <path
+                  d="M15.406,6.512c-.125-1.432-1.302-2.512-2.739-2.512H5.333c-1.437,0-2.615,1.08-2.739,2.512l-.652,7.5c-.067,.766,.193,1.53,.712,2.097s1.258,.892,2.027,.892H13.318c.769,0,1.508-.325,2.027-.892s.779-1.331,.712-2.097l-.652-7.5Z"
+                  fill="currentColor"></path>
+              </svg>
+              <span>Shop</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Craft 6: Copy to Clipboard Button -->
+      <div class="project-card craft-card" data-squircle-radius="28" data-squircle-smoothing="60">
+        <div class="craft-preview">
+          <button type="button" class="cpy-btn" id="cpyBtn" data-copy="dev@devchauhan.in" title="Copy email">
+            <span aria-hidden="true" class="cpy-icon-box">
+              <!-- Custom Copy Icon (Default) -->
+              <span class="icon-item icon-copy">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path
+                    d="M22 6.9V11.1C22 14.6 20.6 16 17.1 16H16V12.9C16 9.4 14.6 8 11.1 8H8V6.9C8 3.4 9.4 2 12.9 2H17.1C20.6 2 22 3.4 22 6.9Z"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+
+              <!-- Checkmark Icon (Active) -->
+              <span class="icon-item icon-check">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+            </span>
+
+            <span class="cmd-text" id="cpyLabel">Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Craft 7: Stepper / Counter -->
+      <div class="project-card craft-card" data-squircle-radius="28" data-squircle-smoothing="60">
+        <div class="craft-preview">
+          <div class="stp-container">
+            <button type="button" class="stp-btn" id="stpDec" aria-label="Decrease">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12H19" />
+              </svg>
+            </button>
+            <div class="stp-value-wrap" id="stpValueWrap">
+              <span class="stp-value" id="stpValue">0</span>
+            </div>
+            <button type="button" class="stp-btn" id="stpInc" aria-label="Increase">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5V19M5 12H19" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Craft 8: Elastic Slider -->
+      <div class="project-card craft-card" data-squircle-radius="28" data-squircle-smoothing="60">
+        <div class="craft-preview">
+          <div class="els-container" id="elsContainer">
+            <div class="els-track" id="elsTrack" tabindex="0" role="slider" aria-label="Opacity" aria-valuemin="0"
+              aria-valuemax="1" aria-valuenow="0.5" aria-valuetext="0.50">
+              <div class="els-fill" id="elsFill"></div>
+              <span class="els-label" id="elsLabel">Opacity</span>
+              <span class="els-value" id="elsValue">0.50</span>
+              <div class="els-hash-marks" id="elsHashMarks"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Craft 9: macOS Dock-Style Magnification -->
+      <div class="project-card craft-card" data-squircle-radius="28" data-squircle-smoothing="60"
+        style="position:relative;">
+        <div class="craft-preview craft-preview-dock">
+          <div class="dock-row" id="dockRow" aria-label="macOS Dock emulation">
+            <button class="dock-item" aria-label="Finder" data-label="Finder">
+              <img src="assets/dock/finder.png" alt="" draggable="false" />
+            </button>
+            <button class="dock-item" aria-label="Claude" data-label="Claude">
+              <img src="assets/dock/claude.png" alt="" draggable="false" />
+            </button>
+            <button class="dock-item" aria-label="Cursor" data-label="Cursor">
+              <img src="assets/dock/cursor.png" alt="" draggable="false" />
+            </button>
+            <button class="dock-item" aria-label="Antigravity" data-label="Antigravity">
+              <img src="assets/dock/antigravity.png" alt="" draggable="false" />
+            </button>
+            <button class="dock-item" aria-label="kiro" data-label="kiro">
+              <img src="assets/dock/kiro.png" alt="" draggable="false" />
+            </button>
+            <button class="dock-item" aria-label="notion" data-label="notion">
+              <img src="assets/dock/notion.png" alt="" draggable="false" />
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Craft 10: Stacking Toast Notification -->
+      <div class="project-card craft-card craft-card-tall" data-squircle-radius="28" data-squircle-smoothing="60"
+        style="position:relative;">
+        <div class="craft-preview craft-preview-toast">
+          <div class="tst-button-group">
+            <button type="button" class="tst-btn" id="tstShowBtn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+              </svg>
+              <span>Show Toast</span>
+            </button>
+          </div>
+
+          <div class="tst-container">
+            <div class="tst-stack" id="tstStack"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── Gooey SVG Infrastructure ── -->
+  <svg style="position:fixed;inset:0;width:0;height:0;overflow:visible;pointer-events:none" aria-hidden="true">
+    <defs>
+      <mask id="gooeyMask" style="mask-type:alpha" maskContentUnits="userSpaceOnUse">
+        <path id="gooeyMaskPath" d="" fill="white" />
+      </mask>
+      <mask id="gooeyMaskTooltip" style="mask-type:alpha" maskContentUnits="userSpaceOnUse">
+        <path id="gooeyMaskPathTooltip" d="" fill="white" />
+      </mask>
+    </defs>
+  </svg>
+
+  <svg id="gooeyBlobSvgDD" aria-hidden="true"
+    style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;overflow:visible;visibility:hidden">
+    <defs>
+      <filter id="gooeyFilterDD" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur id="gooeyBlurDD" in="SourceAlpha" stdDeviation="0" result="blur" />
+        <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="liquid" />
+        <feFlood id="gooeyFloodDD" flood-color="#e6e6e7" flood-opacity="1" result="fill" />
+        <feComposite in="fill" in2="liquid" operator="in" />
+      </filter>
+    </defs>
+    <path id="gooeyBlobPathDD" d="M0 0Z" filter="url(#gooeyFilterDD)" />
+  </svg>
+
+  <svg id="gooeyBlobSvgTT" aria-hidden="true"
+    style="position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;overflow:visible;visibility:hidden">
+    <defs>
+      <filter id="gooeyFilterTT" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur id="gooeyBlurTT" in="SourceAlpha" stdDeviation="0" result="blur" />
+        <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="liquid" />
+        <feFlood id="gooeyFloodTT" flood-color="#e6e6e7" flood-opacity="1" result="fill" />
+        <feComposite in="fill" in2="liquid" operator="in" />
+      </filter>
+    </defs>
+    <path id="gooeyBlobPathTT" d="M0 0Z" filter="url(#gooeyFilterTT)" />
+  </svg>
+
+  <!-- Bottom Fade Overlay (Seamless Theme Integration) -->
+  <div class="bottom-fade-overlay" aria-hidden="true"></div>
+
+  <!-- Craft component scripts -->
+  <script src="js/gooey.js"></script>
+  <script src="js/gooey-common.js"></script>
+  <script src="js/dropdown.js"></script>
+  <script src="js/tooltip.js"></script>
+  <script src="js/split-button.js"></script>
+  <script src="js/pill-menubar.js"></script>
+  <script src="js/copy-button.js"></script>
+  <script src="js/stepper.js"></script>
+  <script src="js/elastic-slider.js"></script>
+  <script src="js/dock-magnify.js"></script> 
+  <script src="js/search-bar.js"></script>
+  <script src="js/toast-stack.js"></script>
+
+  <!-- Squircle Generator & Auto-Applier -->
+  <script src="js/squircle.js"></script>
+
+  <!-- Card layout switcher script -->
+  <script src="js/layout-toggle.js"></script>
+</body>
+
+</html>
