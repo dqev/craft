@@ -1,0 +1,24 @@
+# Crafts by Dev Chauhan
+
+> A curated collection of interactive UI components, micro-interactions, and visual web blocks built with Vanilla JavaScript and CSS.
+
+## Domain & Repository
+- Website: https://craft.devchauhan.in
+- Repository: https://github.com/dqev/craft
+
+## Key Features & Components
+- Search Bar with SVG Liquid Bridge
+- Gooey Dropdown Menu
+- Gooey Contextual Tooltip
+- Split Action Button with Morphing State
+- Pill Menubar Navigation with Fluid Slider
+- Copy to Clipboard Button with Reicon Morph
+- Animated Counter / Stepper
+- Elastic Friction Slider
+- macOS Dock Magnification Bar
+- Stacking Toast Notification System
+
+## Tech Stack
+- HTML5 & CSS3 (Vanilla CSS with Custom Properties)
+- Vanilla JavaScript (ES6+)
+- SVG Filter Masking & Opentype.js Signature

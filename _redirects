@@ -1,0 +1,5 @@
+# Redirect www to apex domain
+https://www.craft.devchauhan.in/* https://craft.devchauhan.in/:splat 301!
+
+# Serve 404 page for any nonexistent route
+/* /404.html 404

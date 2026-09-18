@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" class="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.className = "light";</script>
+
+  <title>404 — Page Not Found | Crafts</title>
+  <meta name="title" content="404 — Page Not Found | Crafts" />
+  <meta name="description" content="The page you are looking for does not exist on Crafts." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon/favicon-48x48.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Craft component styles -->
+  <link rel="stylesheet" href="css/craft.css" />
+
+  <style>
+    :root {
+      --heading: #111111;
+      --body: #262626;
+      --body-muted: #737373;
+      --background: #ffffff;
+      --card-bg: #f4f4f5;
+      --card-hover-bg: #e8e8eb;
+      --gooey-surface: #e6e6e7;
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--body);
+      background-color: var(--background);
+      font-family: var(--font-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .not-found-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .not-found-code {
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--heading);
+      letter-spacing: -.03em;
+      line-height: 1;
+    }
+
+    .not-found-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--heading);
+      letter-spacing: -.015em;
+    }
+
+    .not-found-desc {
+      font-size: 0.9rem;
+      color: var(--body-muted);
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      padding: 0 20px;
+      background-color: var(--gooey-surface);
+      color: var(--heading);
+      font-family: var(--font-primary);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .back-btn:hover {
+      background-color: #dcdcdc;
+      transform: translateY(-1px);
+    }
+
+    .back-btn:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="not-found-card">
+    <div class="not-found-code">404</div>
+    <h1 class="not-found-title">Page not found</h1>
+    <p class="not-found-desc">The craft or page you're looking for doesn't exist or has been moved.</p>
+
+    <a href="/" class="back-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span>Back to Crafts</span>
+    </a>
+  </main>
+</body>
+
+</html>

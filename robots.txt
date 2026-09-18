@@ -1,0 +1,6 @@
+# Allow all search engine crawlers and AI bots
+User-agent: *
+Allow: /
+
+# Sitemap reference
+Sitemap: https://craft.devchauhan.in/sitemap.xml
